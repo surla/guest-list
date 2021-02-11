@@ -1,3 +1,4 @@
+import { link } from 'fs';
 import { useState } from 'react';
 
 const GuestList: React.FC = () => {
@@ -13,6 +14,10 @@ const GuestList: React.FC = () => {
 
   return <div>
     <h3>Guest List</h3>
+    
+    <ul>
+      {guests.map(guest => <li key={guest}>{guest}</li>)}
+    </ul>
 
     <input value={name} onChange={(e) => setName(e.target.value)}/>
     <button onClick={onClick}>Add Guest</button>
